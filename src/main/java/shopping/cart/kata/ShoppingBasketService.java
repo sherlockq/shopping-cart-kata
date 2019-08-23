@@ -1,13 +1,13 @@
 package shopping.cart.kata;
 
 public class ShoppingBasketService {
-    private BasketReposity basketReposity;
+    private BasketRepository basketRepository;
 
-    public ShoppingBasketService(BasketReposity basketReposity) {
-        this.basketReposity = basketReposity;
+    public ShoppingBasketService(BasketRepository basketRepository) {
+        this.basketRepository = basketRepository;
     }
 
     public void addItem(int userId, int prodId, int quantity) {
-        this.basketReposity.getBasketByUserId(userId).addItem(null);
+        this.basketRepository.getBasketByUserId(userId).addItem(null);
     }
 }

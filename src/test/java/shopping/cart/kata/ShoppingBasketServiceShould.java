@@ -11,9 +11,9 @@ public class ShoppingBasketServiceShould {
     @Test
     void find_a_basket_by_userId_and_add_an_item_to_it() {
         Basket basket = mock(Basket.class);
-        BasketReposity basketReposity = mock(BasketReposity.class);
-        ShoppingBasketService basketService = new ShoppingBasketService(basketReposity);
-        when(basketReposity.getBasketByUserId(USER_ID)).thenReturn(basket);
+        BasketRepository basketRepository = mock(BasketRepository.class);
+        ShoppingBasketService basketService = new ShoppingBasketService(basketRepository);
+        when(basketRepository.getBasketByUserId(USER_ID)).thenReturn(basket);
 
         basketService.addItem(USER_ID, PROD_ID, 3);
 
