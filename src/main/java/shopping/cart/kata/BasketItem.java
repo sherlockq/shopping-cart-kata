@@ -17,4 +17,8 @@ public class BasketItem {
     public int getUnitPrice() {
         return product.getPrice();
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
 }

@@ -1,5 +1,6 @@
 package shopping.cart.kata;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,26 +12,35 @@ public class BasketItemShould {
     private static final int PRODUCT_PRICE = 5;
     private String PRODUCT_NAME = "product name";
 
+    private Product product;
+    private BasketItem item;
+
+    @BeforeEach
+    void setUp() {
+        product = mock(Product.class);
+        item = new BasketItem(product, QUANTITY);
+    }
+
     @Test
     void expose_name_of_product() {
-        Product product = mock(Product.class);
         when(product.getName()).thenReturn(PRODUCT_NAME);
-        BasketItem item = new BasketItem(product, QUANTITY);
 
         assertEquals(PRODUCT_NAME, item.getProductName());
     }
 
-    // unit price
     @Test
     void expose_price_of_product() {
-        Product product = mock(Product.class);
         when(product.getPrice()).thenReturn(PRODUCT_PRICE);
-        BasketItem item = new BasketItem(product, QUANTITY);
 
         assertEquals(PRODUCT_PRICE, item.getUnitPrice());
     }
 
-    // quantity
+    @Test
+    void expose_quantity_of_product() {
 
-    // total item price
+        assertEquals(QUANTITY, item.getQuantity());
+    }
+
+
+    // TODO: total item price
 }
