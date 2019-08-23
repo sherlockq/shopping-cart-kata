@@ -9,9 +9,8 @@ import static org.mockito.Mockito.mock;
 
 public class BasketShould {
 
-
     @Test
-    void name() {
+    void add_item() {
         Basket basket = new Basket();
         BasketItem item = mock(BasketItem.class);
         basket.addItem(item);
